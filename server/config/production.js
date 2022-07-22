@@ -1,0 +1,7 @@
+if (process.env.NODE_ENV === "production") {
+    // Deployment Mode
+    module.exports = require("./production.js")
+} else {
+    // Development Mode
+    module.export = require("./dev.js")
+}
