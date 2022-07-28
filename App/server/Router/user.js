@@ -27,6 +27,7 @@ router.post('/register', (req, res) => {
         })
     })
 
+
 router.post('/namecheck', (req, res) => {
     User.findOne({ displayName : req.body.displayName })
         .exec()
@@ -42,3 +43,27 @@ router.post('/namecheck', (req, res) => {
         })
 })
 
+
+router.post(
+    "/profile/img",
+    setUpload("react-community-post/user"), 
+    (req, res, next) => {
+      res.status(200).json({ success: true, filePath: res.req.file.location })
+    })
+
+
+router.post('/profile/update', (req, res) => {
+    let temp = {
+        photoURL: req.body.photoURL,
+    };
+    User.updateOne({ uid : req.body.uid }, { $set : temp })
+        .exec()
+        .then(() => {
+            res.status(200).json({ success: true })
+        })
+        .catch((err) => {
+            res.status(200).json({ success: false })
+        })
+})
+
+module.exports = router;
