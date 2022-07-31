@@ -16,6 +16,8 @@ import Login from './Component/User/Login'
 import Register from './Component/User/Register'
 import MyPage from './Component/User/MyPage';
 
+import TravMap from './Component/TravMap';
+
 function App() {
   const dispatch = useDispatch();
 
@@ -43,6 +45,8 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
         <Route path="/mypage" element={<MyPage />} />
+
+        <Route path="/travMap" element={<TravMap />} />
       </Routes>
     </>
   );

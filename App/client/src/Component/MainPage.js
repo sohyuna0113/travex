@@ -6,6 +6,7 @@ import { DropdownButton, Dropdown } from "react-bootstrap"
 import { GNBDiv, FooterDiv } from '../Style/MainPageCSS'
 
 function MainPage() {
+
     const [PostList, setPostList] = useState([]);
     const [Sort, setSort] = useState("Recent");
     const [SearchTerm, setSearchTerm] = useState("");
